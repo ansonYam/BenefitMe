@@ -1,20 +1,46 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, View, Text, TouchableOpacity } from 'react-native';
 
-export default function App() {
+import styles from './styles';
+import GuestScreen from './screens/GuestScreen';
+
+const myImageSource = require('./assets/images/logo.png');
+
+const Stack = createNativeStackNavigator();
+
+function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <View style={styles.skipButtonContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('Guest')}>
+          <Text style={styles.skipButtonText}>Skip</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.imageContainer}>
+        <Image source={myImageSource} style={styles.image} />
+      </View>
       <StatusBar style="auto" />
     </View>
+  )
+}
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+        />
+        <Stack.Screen 
+          name="Guest" 
+          component={GuestScreen} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
