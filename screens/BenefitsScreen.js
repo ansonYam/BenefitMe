@@ -55,7 +55,8 @@ export default function BenefitsScreen({ route, navigation }) {
                 onValueChange={(itemValue, itemIndex) => {
                     setSelectedCompany(itemValue);
                     // console.log(itemValue);
-                    const selectedItem = companies[itemIndex];
+                    // why are we one-indexed?
+                    const selectedItem = companies[itemIndex - 1];
                     handleCompare(selectedItem);
                 }}
             >
