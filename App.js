@@ -8,6 +8,7 @@ import { useFonts, IBMPlexMono_400Regular } from '@expo-google-fonts/ibm-plex-mo
 import styles from './styles';
 import BenefitsScreen from './screens/BenefitsScreen';
 import CompaniesScreen from './screens/CompaniesScreen';
+import CompareScreen from './screens/CompareScreen';
 
 const myImageSource = require('./assets/images/logo.png');
 
@@ -64,7 +65,10 @@ export default function App() {
           name="Benefits"
           component={BenefitsScreen}
         />
-
+        <Stack.Screen
+          name="Compare"
+          component={CompareScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
