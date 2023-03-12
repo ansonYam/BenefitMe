@@ -1,27 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button } from 'react-native';
-import styles from '../styles';
+import { Text, View } from 'react-native';
 
 export default function BenefitsScreen({ route }) {
-    const { industry } = route.params;
-    const [benefits, setBenefits] = useState([]);
-
-    useEffect(() => {
-        async function fetchBenefits() {
-            try {
-                const response = await fetch(`http://localhost:3001/api/benefits/${industry}`);
-                const data = await response.json();
-                setBenefits(data);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        fetchBenefits();
-    }, [industry]);
-
+    const { company } = route.params;
+    console.log("In the benefits screen with company ", company["Company Name"]);
     return (
         <View>
-            <Text>{JSON.stringify(benefits)}</Text>
+            <Text>Benefits Screen</Text>
         </View>
-    );
+    )
 }

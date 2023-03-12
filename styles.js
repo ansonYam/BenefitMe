@@ -20,24 +20,32 @@ const styles = StyleSheet.create({
         paddingTop: 50,
     },
     image: {
-        width: 130,
-        height: 190,
+        width: 233,
+        height: 139,
     },
     buttonContainer: {
         buttonContainer: {
             flexDirection: 'row',
         },
     },
-    button: {
-        marginHorizontal: 10,
-        padding: 10,
+    input: {
+        borderWidth: 1,
+        borderColor: '#ccc',
         borderRadius: 5,
+        padding: 10,
+        marginVertical: 10,
+        width: '100%',
+    },
+    button: {
         backgroundColor: colors.dark_blue,
+        borderRadius: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        marginVertical: 10,
     },
     buttonText: {
-        color: '#FFFFFF',
+        color: '#fff',
         fontSize: 18,
-        fontWeight: 'bold',
     },
 })
 
