@@ -23,15 +23,22 @@ const styles = StyleSheet.create({
         width: 130,
         height: 190,
     },
-    skipButtonContainer: {
-        position: 'absolute',
-        top: 10,
-        right: 10,
+    buttonContainer: {
+        buttonContainer: {
+            flexDirection: 'row',
+        },
     },
-    skipButtonText: {
-        color: colors.black,
-        textDecorationLine: 'underline',
-    }
+    button: {
+        marginHorizontal: 10,
+        padding: 10,
+        borderRadius: 5,
+        backgroundColor: colors.dark_blue,
+    },
+    buttonText: {
+        color: '#FFFFFF',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
 })
 
 export default styles;
